@@ -31,3 +31,36 @@ int main()
   }
   
 }
+
+/* #######################OR #################################
+
+void solve()
+{
+    int n,m;cin>>n>>m;
+    int g=__gcd(n,m);
+    vector<int> div;
+    for(int i=1;i*i<=g;i++)
+    {
+        if(i*i==g) div.push_back(i);
+        else
+        {
+            if(g%i==0) div.push_back(i),div.push_back(g/i);
+        }
+    }
+    sort(div.begin(),div.end());
+    int t;cin>>t;
+    while(t--)
+    {
+        int x,y;cin>>x>>y;
+        int ans=0;
+        auto it=lower_bound(div.begin(),div.end(),x);
+        if(it!=div.end() && *it<=y) 
+        {
+            while(it!=div.end() && (*it)<=y) ans=*it,it++;
+            cout<<ans;
+        }
+        else cout<<-1;
+        cout<<endl;
+    }
+}
+*/
