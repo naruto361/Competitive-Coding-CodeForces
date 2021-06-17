@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+    map<ll,bool> mp;
+    for(ll i=1;i*i*i<=1000000000000;i++)
+    {
+        mp[i*i*i]=true;
+    }
+    int t;cin>>t;
+    while(t--)
+    {
+        ll x;cin>>x;
+        bool ok=false;
+        for(auto i:mp)
+        {
+            if(mp.find(x-i.first)!=mp.end()) {ok=true;break;}
+        }
+        if(ok) cout<<"YES\n";
+        else cout<<"NO\n";
+
+    }
+    return 0;
+}
