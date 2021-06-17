@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+bool solve(ll x)
+{
+    if(x<10) return 0;
+    if(x%11==0 || x%111==0 || x%1111==0 || x%11111==0
+    || x%111111==0 || x%1111111==0 || x%11111111==0) return 1;
+    while(x>111)
+    {
+        x-=111;
+        if(x%11==0) return 1;
+    }
+    while(x>11)
+    {
+        x-=11;
+        if(x%11==0) return 1;
+    }
+    return x%11==0;
+}
+int main()
+{
+   int t;cin>>t;
+   while(t--)
+   {
+       ll x;cin>>x;
+       if(solve(x)) cout<<"YES\n";
+       else cout<<"NO\n";
+   }
+    return 0;
+}
