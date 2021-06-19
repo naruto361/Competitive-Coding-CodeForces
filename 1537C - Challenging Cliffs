@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+int main()
+{
+	int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;cin>>n;
+        ll a[n];
+        for(int i=0;i<n;i++) cin>>a[i];
+        sort(a,a+n);
+        if(n<3)
+        {
+            for(int i=0;i<n;i++) cout<<a[i]<<" ";
+            cout<<endl;
+            continue;
+        }
+        int idx1=-1,idx2=-1;
+        ll mini=1e9+1;
+        for(int i=1;i<n;i++)
+        {
+            if(a[i]-a[i-1]<mini)
+            {
+                mini=a[i]-a[i-1];
+                idx1=i-1;idx2=i;
+            }
+        }
+        for(int i=idx2;i<n;i++) cout<<a[i]<<" ";
+        for(int i=0;i<=idx1;i++) cout<<a[i]<<" ";
+        cout<<"\n";
+    }
+}
