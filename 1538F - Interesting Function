@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int solve(int x)
+{
+    ll ans=x;
+    int k=10;
+    while(k<=x)
+    {
+        ans+=x/k;
+        k=k*10;
+    }
+    return ans;
+}
+int main()
+{        
+    ios::sync_with_stdio(false); 
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        ll a,b;
+        cin>>a>>b;
+        cout<<solve(b)-solve(a);
+        cout<<"\n";
+    }
+}
