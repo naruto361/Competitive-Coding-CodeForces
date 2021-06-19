@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+void solve(ll n,ll m,ll x,ll y)
+{
+    cout<<1<<" "<<1<<" "<<n<<" "<<m;
+}
+int main()
+{
+	int t;
+    cin>>t;
+    while(t--)
+    {
+        ll n,m,x,y;
+        cin>>n>>m>>x>>y;
+        solve(n,m,x,y);
+        cout<<"\n";
+    }
+}
