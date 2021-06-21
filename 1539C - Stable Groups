@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{        
+    ios::sync_with_stdio(false); 
+    int n;cin>>n;
+    ll k,x;cin>>k>>x;
+    ll a[n];
+    for(int i=0;i<n;i++) cin>>a[i];
+    sort(a,a+n);
+    ll ans=0;
+    vector<ll> v;
+    int j=0;
+    for(int i=1;i<n;i++)
+    {
+        if(a[i]-a[i-1]>x)
+        {
+            j++;
+            v.push_back(a[i]-a[i-1]);
+        }
+    }
+    sort(v.begin(),v.end());
+    ll kk=0;
+    for(int i=0;i<v.size();i++)
+    {
+        ll p=(v[i]-1)/x;
+        if(kk+p<=k)
+        {
+            kk+=p;
+            j--;
+        }
+        else break;
+    }
+    cout<<j+1;
+}
